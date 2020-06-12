@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text} from 'react-native';
-import {getTeams} from '../../utils/callApi';
+import {getPlayers} from '../../utils/callApi';
 import useAsync from '../../utils/useAsync';
 
 const styles = StyleSheet.create({
@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
 
 export default function PlayersScreen({route}) {
   const {team} = route.params;
-  // const {execute, pending, value, error} = useAsync(getTeams(league), false);
+  const {execute, pending, value, error} = useAsync(getPlayers(team), false);
 
-  // useEffect(() => {
-  //   execute();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    execute();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // console.log({team: value});
+  console.log({players: value});
 
   return (
     <View style={styles.container}>

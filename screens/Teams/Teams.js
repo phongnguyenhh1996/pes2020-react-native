@@ -20,7 +20,7 @@ export default function TeamsScreen({route, navigation}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log({team: value});
+  // console.log({team: value});
 
   return (
     <View style={styles.container}>

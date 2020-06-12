@@ -20,7 +20,19 @@ export const getTeams = (league) => async () =>
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
-    params: {league},
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((res) => res);
+
+export const getPlayers = (team) => async () =>
+  await fetch(API_URL + `/getPlayers?team=${team}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
   })
     .then((response) => {
       return response.json();
