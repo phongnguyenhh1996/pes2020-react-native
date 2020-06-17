@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
 });
 
 export default function PlayersScreen({route, navigation}) {
-  const {team} = route.params;
-  const {execute, pending, value, error} = useAsync(getPlayers(team), false);
+  const {teamId} = route.params;
+  const {execute, pending, value, error} = useAsync(getPlayers(teamId), false);
 
   useEffect(() => {
     execute();
@@ -35,7 +35,7 @@ export default function PlayersScreen({route, navigation}) {
         renderItem={({item, index}) => (
           <PlayerCard navigation={navigation} index={index} data={item} />
         )}
-        keyExtractor={(item) => item.code}
+        keyExtractor={(item) => item._id}
       />
     </View>
   );

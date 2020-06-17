@@ -36,7 +36,7 @@ export default function TeamItem(props) {
       underlayColor="#fff"
       onPress={() =>
         navigation.navigate(NAVIGATION_NAME.PLAYERS, {
-          team: data.code,
+          teamId: data._id,
           title: data.name,
         })
       }>

@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
 });
 
 export default function TeamsScreen({route, navigation}) {
-  const {league} = route.params;
-  const {execute, pending, value, error} = useAsync(getTeams(league), false);
+  const {leagueId} = route.params;
+  const {execute, pending, value, error} = useAsync(getTeams(leagueId), false);
 
   useEffect(() => {
     execute();
@@ -29,7 +29,7 @@ export default function TeamsScreen({route, navigation}) {
         renderItem={({item, index}) => (
           <TeamItem navigation={navigation} index={index} data={item} />
         )}
-        keyExtractor={(item) => item.code}
+        keyExtractor={(item) => item._id}
       />
     </View>
   );

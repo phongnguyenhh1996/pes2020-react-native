@@ -1,5 +1,4 @@
-export const API_URL =
-  'https://us-central1-social-ape-43919.cloudfunctions.net/api/pes/';
+export const API_URL = 'http://localhost:9000/';
 
 export const NAVIGATION_NAME = {
   HOME: 'Home',

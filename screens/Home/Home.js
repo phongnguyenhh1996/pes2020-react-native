@@ -49,7 +49,7 @@ export default function HomeScreen({navigation}) {
             titleStyle={styles.title}
             onPress={() =>
               navigation.navigate(NAVIGATION_NAME.TEAMS, {
-                league: league.code,
+                leagueId: league._id,
                 title: league.title,
               })
             }

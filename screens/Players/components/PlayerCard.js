@@ -52,15 +52,16 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
-  name: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  nameWrapper: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     flex: 1,
     alignItems: 'center',
-    paddingTop: 5,
+    justifyContent: 'center',
+  },
+  name: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
@@ -90,9 +91,11 @@ export default function PlayerCard({data}) {
               </Text>
             ))}
           </View>
-          <Text style={styles.name}>
-            {data.name && data.name.toUpperCase()}
-          </Text>
+          <View style={styles.nameWrapper}>
+            <Text style={styles.name}>
+              {data.name && data.name.toUpperCase()}
+            </Text>
+          </View>
         </View>
       </View>
     </View>
